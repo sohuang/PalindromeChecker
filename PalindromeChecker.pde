@@ -2,8 +2,6 @@ public void setup() {
   String lines[] = loadStrings("palindromes.txt");
   println("there are " + lines.length + " lines");
   for (int i=0; i < lines.length; i++) {
-    println(onlyLetters(lines[i]));
-    println(reverse(onlyLetters(lines[i])));
     if(palindrome(lines[i])==true) {
       println(lines[i] + " IS a palidrome.");
     }
@@ -13,7 +11,7 @@ public void setup() {
   }
 }
 public boolean palindrome(String word) {
-  if (word.equalsIgnoreCase(reverse(onlyLetters(word)))) {
+  if (onlyLetters(word).equalsIgnoreCase(reverse(onlyLetters(word)))) {
     return true;
   }
   return false;
